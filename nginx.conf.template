@@ -27,8 +27,16 @@ http {
     client_max_body_size 100M;
 
     server {
-
+    
         listen 80   default_server;
+        return 301 https://seat.withoutfears.ru$request_uri;
+     
+        root    /var/www/seat/public;
+        index   index.php;
+        
+        server_name ${NGINX_HOST};
+    }
+    server {    
         listen 443  ssl;
 
         root    /var/www/seat/public;
