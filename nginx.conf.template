@@ -36,7 +36,7 @@ http {
 
         server_name ${NGINX_HOST};
         ssl_certificate /etc/letsencrypt/live/withoutfears.ru/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/withoutfears.ru/privkey.pem;
+        ssl_certificate_key /etc/letsencrypt/live/withoutfears.ru/privkey.pem;
 
         location / {
             try_files $uri $uri/ /index.php$is_args$args;
